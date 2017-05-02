@@ -12,6 +12,11 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  */
 public class Pong extends JFrame
 {
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+    }
+    
     private static int pWidth = 700;
     private static int pHeight = 500;
     private static Color bgColour = new Color(0, 0, 0);
@@ -37,9 +42,9 @@ public class Pong extends JFrame
     }
     
     /**
-     * Deklarerer vinner og lukker spillet.
+     * Declares a winner and closes the game.
      * 
-     * @param   winner  Nummeret pÃ¥ spilleren som vant
+     * @param   winner  Number of the player who won
      */
     public static void endGame(int winner)
     {
@@ -55,7 +60,7 @@ public class Pong extends JFrame
     }
 
     /**
-     * Returnerer bredden pÃ¥ JFrame
+     * Returns the width of the JFrame
      * 
      * @return pWidth   int
      */
@@ -65,7 +70,7 @@ public class Pong extends JFrame
     }
     
     /**
-     * Returnerer hÃ¸yden pÃ¥ JFrame
+     * Returns height JFrame
      * 
      * @return pHeight   int
      */
@@ -75,7 +80,7 @@ public class Pong extends JFrame
     }
     
     /**
-     * Returnerer bakgrunnsfargen
+     * Returns background colour
      * 
      * @return bgColour   Color
      */
@@ -85,7 +90,7 @@ public class Pong extends JFrame
     }
     
     /**
-     * Returnerer fargen for ballen
+     * Returns the colour of the ball
      * 
      * @return ballColour   Color
      */
@@ -95,7 +100,7 @@ public class Pong extends JFrame
     }
     
     /**
-     * Returnerer fargen for paddles
+     * Returns the colour of the paddles
      * 
      * @return paddleColour   Color
      */
