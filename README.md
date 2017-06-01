@@ -1,6 +1,6 @@
 # vega
 
-This is a school project for an Open Source class created by rebeci and mariafuu in the spring semester of 2017.
+This is a school project created by rebeci and mariafuu in the spring semester of 2017 for an Open Source class.
 
 Our project idea is an application that works like an arcade, letting the user play simple arcade-style games. We also want the users to be able to use our application to get snippets of code for their own projects. These snippets would be very simple game logic, such as dice throws, or simple visual effects, such as rain.
 
