@@ -6,4 +6,28 @@ Our project idea is an application that works like an arcade, letting the user p
 
 Our idea is to have a simple interface where the various games are shown as well as a button that takes the user to the interface for game logic and visual effects. When the user chooses a game, they will be shown a screen where they can see a leaderboard for the top ten scores for that game. This would be a local leaderboard, in other words a leaderboard for that particular device, not scores from the internet. The player can press play and enter a name to be used for the leaderboard. After playing the game, the score should be shown in relation to the leaderboard and the player can choose to return to the main menu or play again.
 
+These are the ideas we had for games:
+Ducklings (Snake)
+Pong 
+Flappy Bird
+2048
+Breakout/Arkanoid
+Ludo 
+Space Invaders/Pacman
+Platformer
+Labyrinth
+Pinball
+Bubble game
+
+
 For the game logic and visual effects, we want an interface where the user is shown the effect in a box in the user interface and a box where the code for that particular effect is shown. In addition to this there would be options for the user to change certain aspects of the effect. This could be done with a colour picker, for example, or a gauge to decide on speed or number of dices and similar things.
+
+These are the various visual effects and game logics we would like to include in our project:
+Rain
+Confetti
+Glitter
+Color filters, blur filter, mosaic filter, etc.
+Day, night, evening, etc. color filters (overcast/cloudy, sunny) presets
+Dice throw
+Sunbeams
+Moving pieces in a board game
