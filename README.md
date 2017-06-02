@@ -9,7 +9,7 @@ Our idea is to have a simple interface where the various games are shown as well
 These are the ideas we had for games:
 Ducklings (Snake)
 Pong 
-Flappy Bird
+Flappy Bird (Already playable. Leaderboard is not implemented)
 2048
 Breakout/Arkanoid
 Ludo 
