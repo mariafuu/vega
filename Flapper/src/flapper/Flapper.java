@@ -38,7 +38,7 @@ public class Flapper implements ActionListener, MouseListener, KeyListener {
     public boolean gameOver, gameStarted;
     public ArrayList<Rectangle> columns;
     public Random rand;
-    public int ticks, yMotion, score;
+    public int ticks, yMotion, score, highestScore;
 
     public Flapper() {
         JFrame jframe = new JFrame();
@@ -118,11 +118,15 @@ public class Flapper implements ActionListener, MouseListener, KeyListener {
         }
 
         if (gameOver) {
+            if (score > highestScore) {
+                highestScore = score;
+            }
             g.drawString("Game Over", 300, frameHeight / 2 - 50);
             
             g.setFont(new Font("Tahoma", 1, 50));
             g.drawString("Score = " + score, 450, frameHeight /2 + 20);
-            g.drawString("Click to try again", 375, frameHeight /2 + 70);
+            g.drawString("Highest score: " + highestScore, 375, frameHeight /2 + 65);
+            g.drawString("Click to try again", 375, frameHeight /2 + 115);
         }
         if (!gameOver && gameStarted)
         {
