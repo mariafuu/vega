@@ -4,8 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 /**
- * Abstrakt klasse med felles variabler og metoder for alle
- * bevegelige objekter i spillet.
+ * Abstract class with variables and methods common for all moveable objects in the game
  * 
  * @author Maria
  * @version 2
@@ -22,7 +21,7 @@ public abstract class GameObject
     protected int collision;
     
     /**
-     * Bestemmer bevegelsen for objekter av GameObject
+     * Decides the movements of objects of the class GameObject
      */
     public void move()
     {
@@ -50,9 +49,9 @@ public abstract class GameObject
     }
     
     /**
-     * Endrer ySpeed
+     * Changes ySpeed
      * 
-     * @param   ySpeed  ny ySpeed
+     * @param   ySpeed  new ySpeed
      */
     public void setYSpeed(int ySpeed)
     {
@@ -60,9 +59,9 @@ public abstract class GameObject
     }
     
     /**
-     * Endrer xSpeed
+     * Changes xSpeed
      * 
-     * @param   xSpeed  ny xSpeed
+     * @param   xSpeed  new xSpeed
      */
     public void setXSpeed(int xSpeed)
     {
@@ -70,10 +69,9 @@ public abstract class GameObject
     }
     
     /**
-     * Sjekker om et objekt(this) treffer et annet(paddle)
-     * og endrer xSpeed
+     * Checks if an object hits another and changes the speed and direction
      * 
-     * @param   paddle  Objektet som kan bli truffet
+     * @param   paddle  Object that can be hit
      */
     public void checkCollision(GameObject paddle)
     {

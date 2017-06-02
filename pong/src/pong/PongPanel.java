@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 /**
- * Klassen som styrer mesteparten av spillet
+ * Handles most of the game logic
  * 
  * @author Maria
  * @version 2
@@ -39,7 +39,10 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
         score1 = 0;
         score2 = 0;
         addKeyListener(this);
+        
         ball = new Ball();
+        player1 = new Paddle(1);
+        player2 = new Paddle(2);
         
         start();
         timer = new Timer(1000 / 60, this);
@@ -47,19 +50,16 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
     }
 
     /**
-     * Lager to paddles, en for Player 1 og en for Player 2
+     * Makes to paddles, one for player 1 and one for player 2
      */
     public void start()
     {
-        // put your code here
-        player1 = new Paddle(1);
-        player2 = new Paddle(2);
+        
     }
     
     /**
-     * Oppdaterer spillet. Bestemmer om paddles skal rÃ¸re seg
-     * og kjÃ¸rer checkCollision for Ã¥ sjekke om ballen treffer
-     * en paddle
+     * Updates the game and decide whether the paddles should move and runs
+     * check collision to check it the ball hits a paddle
      */
     public void update()
     {
@@ -99,10 +99,11 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
     }
     
     /**
-     * Registrerer nÃ¥r de relevante knappene trykkes
+     * Register if relevant buttons are pressed
      * 
-     * @param   e   eventvariabel
+     * @param   e   event variable
      */
+    @Override
     public void keyPressed(KeyEvent e)
     {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
@@ -120,10 +121,11 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
     }
 
     /**
-     * Registrerer nÃ¥r de relevante knappene slippes
+     * Registers when the relevant buttons are released
      * 
-     * @param   e   eventvariabel
+     * @param   e   eventvariable
      */
+    @Override
     public void keyReleased(KeyEvent e)
     {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
@@ -140,16 +142,12 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
         }
     }
     
-    /**
-     * Kun her som override
-     * 
-     * @param   e   eventvariabel
-     */
+    
+    @Override
     public void keyTyped(KeyEvent e) { }
     
     /**
-     * Sjekker hva scoren er og kjÃ¸rer endGame om en av
-     * spillerne har vunnet
+     * Checks what the score is and calls endGame if a player has won
      */
     public void checkScore()
     {
@@ -164,7 +162,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
     }
     
     /**
-     * Ã˜ker poengsummen til Player 1
+     * Increases the score of Player 1
      */
     public static void setScore1()
     {
@@ -172,7 +170,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
     }
     
     /**
-     * Ã˜ker poengsummen til Player 2
+     * Increases the score of Player 2
      */
     public static void setScore2()
     {
@@ -180,7 +178,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
     }
     
     /**
-     * Returnerer poengsummen til Player 1
+     * Returns the score of Player 1
      * 
      * @return  score1  int
      */
@@ -190,7 +188,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
     }
     
     /**
-     * Returnerer poengsummen til Player 2
+     * Returns the score of Player 2
      * 
      * @return  score2  int
      */
@@ -200,10 +198,11 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
     }
     
     /**
-     * kjÃ¸rer update og repaint hver gang timeren kjÃ¸rer
+     * Runs update and repaint every time the timer runs
      * 
-     * @param   e   eventvariabel
+     * @param   e   event variable
      */
+    @Override
     public void actionPerformed(ActionEvent e)
     {
         update();
@@ -211,10 +210,11 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
     }
     
     /**
-     * Maler ball og paddles
+     * Paints the ball and the paddles
      * 
-     * @param   g   grafikkvariabel
+     * @param   g   graphics variable
      */
+    @Override
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);

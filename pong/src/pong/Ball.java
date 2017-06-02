@@ -4,16 +4,13 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 /**
- * Lager ballen i Pong
+ * Makes the ball
  * 
  * @author Maria
  * @version 2
  */
 public class Ball extends GameObject
 {
-    /**
-     * Constructor for objects of class Ball
-     */
     public Ball()
     {
         x = Pong.getPWidth() / 2;
@@ -26,7 +23,7 @@ public class Ball extends GameObject
     }
 
     /**
-     * Lager en ball
+     * Creates a ball
      * 
      * @param   g   grafikk-variabel
      */

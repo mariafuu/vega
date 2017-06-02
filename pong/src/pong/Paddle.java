@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 /**
- * Lager paddle til Ã¥ treffe ballen med
+ * Makes a paddle to hit the ball with
  * 
  * @author Maria
  * @version 2
@@ -14,15 +14,6 @@ public class Paddle extends GameObject
     // instance variables
     private int playerNum;
     
-    /**
-     * Constructor
-     * Setter bredden og hÃ¸yden pÃ¥ objektet
-     * Setter ySpeed til 0
-     * AvgjÃ¸r om objektet skal vÃ¦re til hÃ¸yre
-     * eller venstre.
-     * 
-     * @param   playerNum   Nummeret pÃ¥ spilleren
-     */
     public Paddle(int playerNum)
     {
         gWidth = 20;
@@ -42,7 +33,7 @@ public class Paddle extends GameObject
     }
     
     /**
-     * Tegner paddles
+     * Paints the paddles
      * 
      * @param   g   Grafikkvariabel
      */
@@ -53,8 +44,9 @@ public class Paddle extends GameObject
     }
     
     /**
-     * Stopper objektet fra Ã¥ forsvinne helt
+     * Stops the object from leaving the window
      */
+    @Override
     public void move()
     {
         if (y < 0 || y > Pong.getPHeight() - gHeight)

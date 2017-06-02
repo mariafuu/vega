@@ -12,33 +12,32 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  */
 public class Pong extends JFrame
 {
-    
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+    public static Pong pong;
     private static int pWidth = 700;
     private static int pHeight = 500;
     private static Color bgColour = new Color(0, 0, 0);
     private static Color ballColour = new Color(0, 255, 0);
     private static Color paddleColour = new Color(0, 0, 255);
+    public PongPanel pPanel;
     
     /**
      * Sets up the game Pong
      * Sets size of JFrame
-     * Creates a JPanel
+     * Creates a PongPanel
      */
     public Pong()
     {
-        setSize(pWidth + 5, pHeight + 25);
-        setTitle("Pong");
-        setResizable(false);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        JFrame pFrame = new JFrame();
         
-        PongPanel pPanel = new PongPanel();
-        add(pPanel, BorderLayout.CENTER);
+        pFrame.setSize(pWidth + 5, pHeight + 25);
+        pFrame.setTitle("Pong");
+        pFrame.setResizable(false);
+        pFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         
-        setVisible(true);
+        pPanel = new PongPanel();
+        pFrame.add(pPanel, BorderLayout.CENTER);
+        
+        pFrame.setVisible(true);
     }
     
     /**
@@ -107,5 +106,9 @@ public class Pong extends JFrame
     public static Color getPaddleColour()
     {
         return paddleColour;
+    }
+    
+    public static void main(String[] args) {
+        pong = new Pong();
     }
 }
