@@ -22,6 +22,7 @@ import java.util.Random;
 
 /**
  * Simple clone of Flappy Bird.
+ * Inspiration and some code taken from https://www.youtube.com/watch?v=I1qTZaUcFX0
  *
  * @author Maria
  */
@@ -66,6 +67,7 @@ public class Flapper implements ActionListener, MouseListener, KeyListener {
         timer.start();
     }
 
+    //adds randomly generated columns to the ArrayList columns
     public void addColumn(boolean start) {
         int space = 300;
         int width = 100;
@@ -110,6 +112,7 @@ public class Flapper implements ActionListener, MouseListener, KeyListener {
         g.setColor(Color.white);
         g.setFont(new Font("Tahoma", 1, 100));
 
+        //Selects which string to print based on the status of the game
         if (!gameStarted) {
             g.drawString("Click to start", 250, frameHeight / 2 - 50);
         }
@@ -132,6 +135,7 @@ public class Flapper implements ActionListener, MouseListener, KeyListener {
     }
 
     public void jump() {
+        //Changes the game to the game over scenario if actionPerformed changes gameOver to true
         if (gameOver) {
             bird = new Rectangle(frameWidth / 2 - 10, frameHeight / 2 - 10, 20, 20);
             columns.clear();
@@ -145,14 +149,15 @@ public class Flapper implements ActionListener, MouseListener, KeyListener {
 
             gameOver = false;
         }
+        //Starts the game if gameStarted is false
         if (!gameStarted) {
             gameStarted = true;
         } else if (!gameOver) {
             if (yMotion > 0) {
                 yMotion = 0;
             }
-
-            yMotion -= 10;
+        //Makes bird move as intended by changing yMotion
+        yMotion -= 10;
         }
     }
 
@@ -189,11 +194,12 @@ public class Flapper implements ActionListener, MouseListener, KeyListener {
             //checks for collision and sets gameOver to true if collision
             for (Rectangle column : columns) {
                 //adds to the score when the bird is between top and bottom column
-                if (column. y == 0 && bird.x + bird.width / 2 > column.x + column.width / 2 - speed
+                if (column.y == 0 && bird.x + bird.width / 2 > column.x + column.width / 2 - speed
                         && bird.x + bird.width / 2 < column.x + column.width / 2 + speed) {
                     score++;
                 }
-
+                
+                // Handles what happens if the bird hits the columns
                 if (column.intersects(bird)) {
                     gameOver = true;
 
